@@ -1,0 +1,2 @@
+    PID    PPID CMD                         %MEM %CPU
+      1       0 /sbin/init splash            0.2  0.0

@@ -1,28 +1,14 @@
 #!/usr/bin/bash
 
 
-source ./task.conf
+UTILS_FILE="$(dirname "$0")/functions.sh"
 
-#!/bin/bash
 
-# Function to display detailed information about a specific process
-get_process_info() {
-    echo "Enter the PID of the process: "
-    read pid
+# shellcheck disable=SC1090
+source "$UTILS_FILE"
 
-    # Check if the PID exists
-    if ! ps -p "$pid" > /dev/null 2>&1; then
-        echo "Process with PID $pid does not exist."
-        return
-    fi
 
-    # Get process details
-    echo "Details for process with PID $pid:"
-    ps -p "$pid" -o pid,ppid,user,%cpu,%mem,etime,comm
 
-    echo "Additional Information:"
-    cat /proc/$pid/status 2>/dev/null | grep -E "^Name|^State|^VmSize|^VmRSS|^Threads"
-}
 
 # Main script execution
 while true; do
@@ -31,9 +17,13 @@ while true; do
     echo "2. Get process info"
     echo "3. Kill a process"
     echo "4. Process stats"
-    echo "2. Exit"
+    echo "5. Realtime monitor"
+    echo "6. Search process by user"
+    echo "7. Log process info"
+    echo "8. Set Memory Limit and CPU Limit"
+    echo "9. Exit"
     echo "Choose an option: "
-    read choice
+    read -r choice
 
     case $choice in
         1)
@@ -48,8 +38,14 @@ while true; do
             ;;        
         5) Realtime_monitor
             ;;
-        6)        
-        10)
+        6) Search_process
+            ;;       
+        7) Log_process_info
+            ;;
+        8)  Set_Memory_CPU_Limits
+            ;;
+           
+        9)
             echo "Exiting."
             break
             ;;

@@ -16,6 +16,10 @@ if [ "$extension" != "pcap" ]; then
     echo "File does not have a .pcap extension."
 fi
 
+echo "Analyzing pcap file: $filename"
+
+
+
 
 # get num of packets in pcap file
 #tshark -r traffic2.pcap | wc -l

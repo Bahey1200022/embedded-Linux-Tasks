@@ -12,3 +12,6 @@ r1 : total packets count and protocols in the pcap file
 r2 : ip's with most num of  destination packets and source packets 
 
 ![alt text](image-2.png)
+
+
+![alt text](image-5.png)

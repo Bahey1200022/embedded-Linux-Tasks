@@ -7,8 +7,7 @@ r0: capture network interactions from wireshark
 
 r1 : total packets count and protocols in the pcap file
 
-![alt text](image.png)
-
+![alt text](image-4.png)
 r2 : packets per protocols 
 
 ![alt text](image-1.png)
